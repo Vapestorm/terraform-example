@@ -1,7 +1,7 @@
 output "droplet_inventory" {
     value = [for s in digitalocean_droplet.droplet[*] : {
         "groups": concat(
-            var.droplet.tags,
+            var.droplet_tags,
             tolist((["terraform"])),
             tolist([var.droplet_country]),
             tolist([var.droplet_datacenter]),
